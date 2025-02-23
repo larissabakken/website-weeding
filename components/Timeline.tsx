@@ -3,24 +3,23 @@
 import { motion } from "framer-motion";
 
 const events = [
-  { time: "12:00", description: "Ankomst" },
-  { time: "4:30 PM", description: "Ceremony Begins" },
-  { time: "5:00 PM", description: "Cocktail Hour" },
-  { time: "6:00 PM", description: "Dinner & Toasts" },
-  { time: "7:30 PM", description: "First Dance" },
-  { time: "8:00 PM", description: "Dance Party" },
-  { time: "10:00 PM", description: "Farewell & Sendoff" },
+  { time: "11:45", description: "Ankomst" },
+  { time: "12:00", description: "Vielse" },
+  { time: "12:45", description: "Mingling med boller og saft" },
+  { time: "15:30", description: "Middag i hovedsalen" },
+  { time: "19:00", description: "Dessert, kaffe og kake" },
+  { time: "21:00 PM", description: "Dans og fest" },
 ];
 
 export default function Timeline() {
   return (
-    <section className="py-20 bg-[#003d1e] text-[#e49133]">
-      <div className="container mx-auto px-4">
+    <section className="py-20 bg-forest text-peach">
+      <div className="container mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-4xl font-handwriting text-center mb-12"
+          className="text-5xl font-handwriting text-center mb-12"
         >
           Bryllupsdagen
         </motion.h2>
@@ -35,9 +34,9 @@ export default function Timeline() {
                 index % 2 === 0 ? "flex-row-reverse" : ""
               }`}
             >
-              <div className="w-1/2 px-4">
+              <div className="w-1/2">
                 <div
-                  className={`p-4 rounded-lg ${
+                  className={`rounded-lg ${
                     index % 2 === 0 ? "text-right" : "text-left"
                   }`}
                 >
@@ -45,11 +44,11 @@ export default function Timeline() {
                   <p>{event.description}</p>
                 </div>
               </div>
-              <div className="w-4 h-4 bg-[#e49133] rounded-full z-10"></div>
-              <div className="w-1/2 px-4"></div>
+              <div className="w-4 h-4 bg-peach rounded-full z-10"></div>
+              <div className="w-1/2"></div>
             </motion.div>
           ))}
-          <div className="absolute top-0 bottom-0 left-1/2 w-1 bg-[#e49133] -ml-0.5"></div>
+          <div className="absolute top-0 bottom-0 left-1/2 w-1 bg-peach -ml-0.5"></div>
         </div>
       </div>
     </section>
