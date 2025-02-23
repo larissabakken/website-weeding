@@ -30,7 +30,7 @@ export default function Timeline() {
               initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: index * 0.1 }}
-              className={`flex items-center mb-8 ${
+              className={`flex items-center mb-8 px-8 ${
                 index % 2 === 0 ? "flex-row-reverse" : ""
               }`}
             >
