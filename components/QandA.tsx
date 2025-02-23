@@ -14,13 +14,13 @@ import Detail from "./Detail";
 
 const QandA = () => {
   return (
-    <section className="py-20 bg-[#e49133] text-[#003d1e]">
+    <section className="py-20 bg-peach text-forest">
       <div className="container mx-auto px-4">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-4xl font-handwriting text-center mb-12"
+          className="text-5xl font-handwriting text-center mb-12"
         >
           Spørsmål og svar
         </motion.h2>
