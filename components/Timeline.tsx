@@ -1,16 +1,16 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
 
 const events = [
-  { time: "4:00 PM", description: "Arrival & Seating" },
+  { time: "12:00", description: "Ankomst" },
   { time: "4:30 PM", description: "Ceremony Begins" },
   { time: "5:00 PM", description: "Cocktail Hour" },
   { time: "6:00 PM", description: "Dinner & Toasts" },
   { time: "7:30 PM", description: "First Dance" },
   { time: "8:00 PM", description: "Dance Party" },
   { time: "10:00 PM", description: "Farewell & Sendoff" },
-]
+];
 
 export default function Timeline() {
   return (
@@ -22,7 +22,7 @@ export default function Timeline() {
           transition={{ duration: 0.8 }}
           className="text-4xl font-handwriting text-center mb-12"
         >
-          Wedding Timeline
+          Bryllupsdagen
         </motion.h2>
         <div className="relative">
           {events.map((event, index) => (
@@ -31,10 +31,16 @@ export default function Timeline() {
               initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: index * 0.1 }}
-              className={`flex items-center mb-8 ${index % 2 === 0 ? "flex-row-reverse" : ""}`}
+              className={`flex items-center mb-8 ${
+                index % 2 === 0 ? "flex-row-reverse" : ""
+              }`}
             >
               <div className="w-1/2 px-4">
-                <div className={`p-4 rounded-lg ${index % 2 === 0 ? "text-right" : "text-left"}`}>
+                <div
+                  className={`p-4 rounded-lg ${
+                    index % 2 === 0 ? "text-right" : "text-left"
+                  }`}
+                >
                   <h3 className="text-xl font-semibold mb-2">{event.time}</h3>
                   <p>{event.description}</p>
                 </div>
@@ -47,6 +53,5 @@ export default function Timeline() {
         </div>
       </div>
     </section>
-  )
+  );
 }
-

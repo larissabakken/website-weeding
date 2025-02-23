@@ -1,6 +1,7 @@
-import Banner from "@/components/Banner"
-import Information from "@/components/Information"
-import Timeline from "@/components/Timeline"
+import Banner from "@/components/Banner";
+import Information from "@/components/Information";
+import Timeline from "@/components/Timeline";
+import QandA from "@/components/QandA";
 
 export default function Home() {
   return (
@@ -8,7 +9,7 @@ export default function Home() {
       <Banner />
       <Information />
       <Timeline />
+      <QandA />
     </main>
-  )
+  );
 }
-
