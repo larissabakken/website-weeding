@@ -13,7 +13,7 @@ const events = [
 
 export default function Timeline() {
   return (
-    <section className="py-20 bg-forest text-peach">
+    <section className="py-20 text-forest">
       <div className="container mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -44,11 +44,11 @@ export default function Timeline() {
                   <p>{event.description}</p>
                 </div>
               </div>
-              <div className="w-4 h-4 bg-peach rounded-full z-10"></div>
+              <div className="w-4 h-4 bg-forest rounded-full z-10"></div>
               <div className="w-1/2"></div>
             </motion.div>
           ))}
-          <div className="absolute top-0 bottom-0 left-1/2 w-1 bg-peach -ml-0.5"></div>
+          <div className="absolute top-0 bottom-0 left-1/2 w-1 bg-forest -ml-0.5"></div>
         </div>
       </div>
     </section>

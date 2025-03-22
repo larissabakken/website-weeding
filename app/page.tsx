@@ -5,7 +5,7 @@ import QandA from "@/components/QandA";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-sage text-brown">
+    <main className="min-h-screen bg-customGreenBg text-brown">
       <Banner />
       <Information />
       <Timeline />
