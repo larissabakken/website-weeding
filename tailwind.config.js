@@ -12,6 +12,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        customGreenBg: "#A5BEA4",
         sage: "#5a6f2a",
         peach: "#e49133",
         rust: "#9f3501",
@@ -60,5 +61,4 @@ module.exports = {
     },
   },
   plugins: [require("tailwindcss-animate")],
-}
-
+};

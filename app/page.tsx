@@ -6,7 +6,7 @@ import MenuNav from "@/components/MenuNav";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-sage text-brown">
+    <main className="min-h-screen bg-customGreenBg text-brown">
       <MenuNav />
       <Banner />
       <Information />
