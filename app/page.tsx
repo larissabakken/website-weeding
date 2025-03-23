@@ -14,6 +14,8 @@ export default function Home() {
       <Information />
       <PhotosBanner />
       <RSVP />
+      <PhotosBanner />
+      {/* <Timeline /> */}
       <QandA />
       <GiftQA />
     </main>
