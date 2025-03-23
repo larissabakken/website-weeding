@@ -9,7 +9,7 @@ export function RSVP() {
     //window.location.href = "det kommer skjemalink her";
   };
   return (
-    <section className="bg-[#850751] min-h-[50vh] flex flex-col justify-evenly items-center text-center py-20 gap-12">
+    <section className="bg-berry min-h-[50vh] flex flex-col justify-evenly items-center text-center py-20 gap-12">
       <div className="text-peach font-handwriting text-6xl">RSVP</div>
       <div className="container mx-auto text-white font-bold px-16">
         Skriv inn telefonnummeret ditt for å få tilgang til invitasjonen din og
@@ -21,7 +21,7 @@ export function RSVP() {
       </div>
       <Button
         size="lg"
-        className="mx-auto bg-peach hover:bg-peach text-white  hover:text-[#850751] rounded-[6px] px-16 py-4 gap-3"
+        className="mx-auto bg-peach hover:bg-peach text-white  hover:text-berry rounded-[6px] px-16 py-4 gap-3"
         onClick={handleRSVP}
       >
         <Send />

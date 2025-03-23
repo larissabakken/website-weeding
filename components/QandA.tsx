@@ -42,17 +42,6 @@ const QandA = () => {
             }
           />
           <Detail
-            icon={<Gift className="w-12 h-12 mx-auto mb-4" />}
-            detail={"Hva gjør vi med gaver?"}
-            info={
-              "Det at du ønsker å feire dagen med oss er en gave i seg selv. Hvis du fremdeles ønsker å gi en gave kan du sjekke ut ønskelisten vår " +
-              '<a href="https://www.example.com" style="text-decoration: underline;">her</a>.'
-            }
-            description={
-              "Fysiske gaver og kort kan henvendes til gavebordet. Dog merk at gavebordet ikke vil være bemannet, så gaver og kort vil ikke åpnes på selve bryllupsdagen."
-            }
-          />
-          <Detail
             icon={<Speech className="w-12 h-12 mx-auto mb-4" />}
             detail={"Jeg ønsker å holde en tale, hva gjør jeg?"}
             info={
