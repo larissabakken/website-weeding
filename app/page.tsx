@@ -4,18 +4,18 @@ import QandA from "@/components/QandA";
 import MenuNav from "@/components/MenuNav";
 import { RSVP } from "@/components/RSVP";
 import { GiftQA } from "@/components/GiftQA";
-
 import PhotosBanner from "@/components/PhotosBanner";
+import Timeline from "@/components/Timeline";
+
 export default function Home() {
   return (
     <main>
       <MenuNav />
       <Banner />
       <Information />
-      <PhotosBanner />
       <RSVP />
       <PhotosBanner />
-      {/* <Timeline /> */}
+      <Timeline />
       <QandA />
       <GiftQA />
     </main>
