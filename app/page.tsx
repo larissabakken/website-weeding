@@ -6,14 +6,17 @@ import MenuNav from "@/components/MenuNav";
 import { RSVP } from "@/components/RSVP";
 import { GiftQA } from "@/components/GiftQA";
 
+import PhotosBanner from "@/components/PhotosBanner";
 export default function Home() {
   return (
-    <main className="min-h-screen bg-customGreenBg text-brown">
+    <main>
       <MenuNav />
       <Banner />
       <Information />
       <Timeline />
       <RSVP />
+      <PhotosBanner />
+      {/* <Timeline /> */}
       <QandA />
       <GiftQA />
     </main>

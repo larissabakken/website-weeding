@@ -6,8 +6,8 @@ import Detail from "./Detail";
 
 export default function Information() {
   return (
-    <section className="py-10 bg-peach text-forest">
-      <div className="container mx-auto px-4">
+    <section className="py-10 bg-[#e99873] text-[#f7e2d9]">
+      <div className="container mx-auto px-4 pt-20">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
