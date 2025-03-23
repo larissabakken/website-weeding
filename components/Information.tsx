@@ -27,7 +27,6 @@ export default function Information() {
             info={"Bøndenes Hus"}
             description={"Oppsandveien 3, 1400 Ski"}
           />
-
           <Detail
             icon={<CircleParking className="w-12 h-12 mx-auto mb-4" />}
             info={"Parkering på grusplassen ved lokalet"}

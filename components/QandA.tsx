@@ -1,12 +1,21 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Shirt, Plus, Speech, Camera, Mic2, CakeSlice } from "lucide-react";
+import {
+  Shirt,
+  Plus,
+  Speech,
+  Camera,
+  Mic2,
+  CakeSlice,
+  CircleParking,
+  BusFront,
+} from "lucide-react";
 import Detail from "./Detail";
 
 const QandA = () => {
   return (
-    <section className="flex justify-center items-center bg-[#758D67] h-[100vh] text-[#daeadb]">
+    <section className="flex justify-center items-center bg-[#758D67] text-[#daeadb] py-20">
       <div className="container mx-auto px-4">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -17,6 +26,16 @@ const QandA = () => {
           Spørsmål og svar
         </motion.h2>
         <div className="grid md:grid-cols-2 gap-8">
+          <Detail
+            icon={<CircleParking className="w-12 h-12 mx-auto mb-4" />}
+            detail={"Er parkering?"}
+            info="Det er parkering på grusplassen ved lokalet."
+          />
+          <Detail
+            icon={<BusFront className="w-12 h-12 mx-auto mb-4" />}
+            detail="Kan jeg komme dit med kollektivtransport?"
+            info="Du kan ta en buss (350 Lillestrøm) fra Ski stasjon, gå av på stoppet som heter Middelalderkirken. Derfra er det en kort gåtur på 4 minutter til lokalet."
+          />
           <Detail
             icon={<Shirt className="w-12 h-12 mx-auto mb-4" />}
             detail={"Hva er kleskoden?"}
@@ -52,11 +71,7 @@ const QandA = () => {
               "Ta kontakt med vår toastmaster, Aron på tlf: ZZZZZZZZZ. Så vil han gi deg informasjon om hvordan gå frem med dette."
             }
             description={
-              <>
-                <p>
-                  Tilgjengelig på lokalet er det: Mikrofon, Høytaler, Lerret.
-                </p>
-              </>
+              "Tilgjengelig på lokalet er det: Mikrofon, Høytaler, Lerret."
             }
           />
           <Detail
