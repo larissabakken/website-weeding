@@ -6,6 +6,7 @@ import { RSVP } from "@/components/RSVP";
 import { GiftQA } from "@/components/GiftQA";
 import PhotosBanner from "@/components/PhotosBanner";
 import Timeline from "@/components/Timeline";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -16,8 +17,9 @@ export default function Home() {
       <RSVP />
       <PhotosBanner />
       <Timeline />
-      <QandA />
       <GiftQA />
+      <QandA />
+      <Footer />
     </main>
   );
 }

@@ -6,14 +6,14 @@ import { Gift } from "lucide-react";
 
 export function GiftQA() {
   return (
-    <section className="bg-rust min-h-[50vh] py-20 ">
+    <section className="bg-[#E99873] py-20 ">
       <motion.div
         initial={{ opacity: 0, x: -20 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8, delay: 0.2 }}
         className="text-center flex flex-col gap-12"
       >
-        <div className="text-peach font-handwriting text-7xl">
+        <div className="text-[#FBFAFB] font-handwriting text-7xl">
           Hva Gjør Vi Med Gaver
         </div>
 
