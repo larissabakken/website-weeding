@@ -5,9 +5,10 @@ interface DetailProps {
   icon: React.ReactNode;
   info: string;
   description?: string;
+  detail?: string;
 }
 
-const Detail: FC<DetailProps> = ({ icon, info, description = "" }) => {
+const Detail: FC<DetailProps> = ({ icon, info, description = "", detail }) => {
   return (
     <motion.div
       initial={{ opacity: 0, x: -20 }}
@@ -16,7 +17,7 @@ const Detail: FC<DetailProps> = ({ icon, info, description = "" }) => {
       className="text-center"
     >
       {icon}
-
+      <h3 className="text-2xl font-semibold mb-2">{detail}</h3>
       <p dangerouslySetInnerHTML={{ __html: info }} />
       <p dangerouslySetInnerHTML={{ __html: description }} />
     </motion.div>
