@@ -1,20 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
-import {
-  Shirt,
-  Plus,
-  Gift,
-  Speech,
-  Camera,
-  Mic2,
-  CakeSlice,
-} from "lucide-react";
+import { Shirt, Plus, Speech, Camera, Mic2, CakeSlice } from "lucide-react";
 import Detail from "./Detail";
 
 const QandA = () => {
   return (
-    <section className="py-20 text-forest">
+    <section className="flex justify-center items-center bg-[#758D67] h-[100vh] text-[#daeadb]">
       <div className="container mx-auto px-4">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -57,13 +49,14 @@ const QandA = () => {
               "Jeg ønsker å ha et musikkinnslag / underholdningsinnslag, hva gjør jeg?"
             }
             info={
-              "Ta kontakt med vår toastmaster, Aron på tlf: ZZZZZZZZZ. Så vil han gi deg informasjon om hvordan gå frem med dette"
+              "Ta kontakt med vår toastmaster, Aron på tlf: ZZZZZZZZZ. Så vil han gi deg informasjon om hvordan gå frem med dette."
             }
             description={
-              "Tilgjengelig på lokalet er det:" +
-              "<br/>- Mikrofon" +
-              "<br/>- Høytaler" +
-              "<br/>- Lerret"
+              <>
+                <p>
+                  Tilgjengelig på lokalet er det: Mikrofon, Høytaler, Lerret.
+                </p>
+              </>
             }
           />
           <Detail

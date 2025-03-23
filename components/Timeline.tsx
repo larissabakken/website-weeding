@@ -13,7 +13,7 @@ const events = [
 
 export default function Timeline() {
   return (
-    <section className="py-20 text-forest">
+    <section className="py-20 bg-[#bcccb6]">
       <div className="container mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}

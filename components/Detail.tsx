@@ -4,7 +4,7 @@ import { FC } from "react";
 interface DetailProps {
   icon: React.ReactNode;
   info: string;
-  description?: string;
+  description?: React.ReactNode | string;
   detail?: string;
 }
 
@@ -17,9 +17,11 @@ const Detail: FC<DetailProps> = ({ icon, info, description = "", detail }) => {
       className="text-center"
     >
       {icon}
-      <h3 className="text-2xl font-semibold mb-2">{detail}</h3>
-      <p dangerouslySetInnerHTML={{ __html: info }} />
-      <p dangerouslySetInnerHTML={{ __html: description }} />
+      <div className="text-white">
+        <h3 className="text-2xl font-semibold mb-2">{detail}</h3>
+        <p>{info}</p>
+        <p>{description}</p>
+      </div>
     </motion.div>
   );
 };

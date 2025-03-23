@@ -1,9 +1,12 @@
 import type React from "react";
 import "./globals.css";
-import { Inter } from "next/font/google";
-import "./globals.css";
-import MenuNav from "@/components/MenuNav";
-const inter = Inter({ subsets: ["latin"] });
+import { Poppins } from "next/font/google";
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-poppins",
+});
 
 export const metadata = {
   title: "Edith & Christian's bryllup",
@@ -18,7 +21,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body
+        className={`${poppins.variable} font-poppins max-w-screen overflow-x-hidden`}
+      >
+        {children}
+      </body>
     </html>
   );
 }
