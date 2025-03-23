@@ -1,21 +1,28 @@
 @import url("https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 76, 34, 20;
-  --background-start-rgb: 90, 111, 42;
-  --background-end-rgb: 228, 145, 51;
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .font-handwriting {
+    font-family: "Amatic SC", cursive;
+  }
+  .font-poppins {
+    font-family: var(--font-poppins), "Poppins", sans-serif;
+  }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
-}
+@layer base {
+  :root {
+    --font-poppins: "Poppins", sans-serif;
+  }
 
-.font-handwriting {
-  font-family: "Amatic SC", cursive;
+  body {
+    @apply font-poppins antialiased;
+  }
 }
-

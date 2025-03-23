@@ -6,17 +6,17 @@ import Detail from "./Detail";
 
 export default function Information() {
   return (
-    <section className="py-10 bg-peach text-forest">
-      <div className="container mx-auto px-4">
+    <section className="py-10 bg-[#EAC0AC]">
+      <div className="container mx-auto px-4 pt-20">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-6xl font-bold font-handwriting text-center mb-12"
+          className="text-6xl font-bold font-handwriting text-center mb-12 text-[#d57973]"
         >
           Bryllups detaljer
         </motion.h2>
-        <div className="grid md:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-4 gap-8 text-[#f7ece8] font-semibold">
           <Detail
             icon={<Clock className="w-12 h-12 mx-auto mb-4" />}
             info={"20 september 2025"}
@@ -34,9 +34,7 @@ export default function Information() {
           />
           <Detail
             icon={<BusFront className="w-12 h-12 mx-auto mb-4" />}
-            info={
-              "Dersom du kommer med kollektivtransport går det buss (350 Lillestrøm) fra Ski stasjon, gå av på stoppet som heter Middelalderkirken. Derfra er det en kort gåtur på 4 minutter til lokalet."
-            }
+            info="Lett tilgjengelig med kollektivtransport"
           />
         </div>
       </div>
