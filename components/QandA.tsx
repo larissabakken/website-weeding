@@ -14,13 +14,13 @@ import Detail from "./Detail";
 
 const QandA = () => {
   return (
-    <section className="py-20 bg-peach text-forest">
+    <section className="py-20 text-forest">
       <div className="container mx-auto px-4">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-5xl font-handwriting text-center mb-12"
+          className="text-7xl font-handwriting text-center mb-12"
         >
           Spørsmål og svar
         </motion.h2>
@@ -52,11 +52,6 @@ const QandA = () => {
             }
           />
           <Detail
-            icon={<Camera className="w-12 h-12 mx-auto mb-4" />}
-            detail={"Vil det være mulighet for fremvisning av bilder?"}
-            info={"???"}
-          />
-          <Detail
             icon={<Mic2 className="w-12 h-12 mx-auto mb-4" />}
             detail={
               "Jeg ønsker å ha et musikkinnslag / underholdningsinnslag, hva gjør jeg?"
@@ -78,6 +73,11 @@ const QandA = () => {
               "Kaker, snacks, drikker og eventuelt annet kan leveres til kjøkkenet inn til høyre fra hovedinngangen."
             }
             description="Der vil det være tilgjengelig kjøleskap / frys mm. Dersom det skulle bli fullt er det også kjøleskap / frys ned trappen."
+          />
+          <Detail
+            icon={<Camera className="w-12 h-12 mx-auto mb-4" />}
+            detail={"Vil det være mulighet for fremvisning av bilder?"}
+            info={"???"}
           />
         </div>
       </div>
