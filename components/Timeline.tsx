@@ -8,7 +8,7 @@ import {
 } from "react-icons/gi";
 import { FaPeopleGroup } from "react-icons/fa6";
 import { LiaPeopleCarrySolid } from "react-icons/lia";
-import { LuSalad } from "react-icons/lu";
+import { LuSalad, LuCakeSlice } from "react-icons/lu";
 import { IoRestaurantOutline } from "react-icons/io5";
 
 const events = [
@@ -25,14 +25,19 @@ const events = [
     icon: GiGlassCelebration,
   },
   {
-    time: "16:30",
+    time: "16:00",
     description: "Forret",
     icon: LuSalad,
   },
   {
+    time: "16:30",
+    description: "Hovedrett",
+    icon: IoRestaurantOutline,
+  },
+  {
     time: "19:00",
     description: "Dessert, kaffe og kake",
-    icon: IoRestaurantOutline,
+    icon: LuCakeSlice,
   },
   { time: "21:00 PM", description: "Dans og fest", icon: GiPartyPopper },
 ];
