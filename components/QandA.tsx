@@ -15,7 +15,7 @@ import Detail from "./Detail";
 
 const QandA = () => {
   return (
-    <section className="flex justify-center items-center bg-[#758D67] text-[#daeadb] py-20">
+    <section className="flex justify-center items-center bg-forest text-[#daeadb] py-20">
       <div className="container mx-auto px-4">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}

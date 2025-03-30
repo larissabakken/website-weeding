@@ -9,7 +9,7 @@ export default function PhotosBanner() {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [Autoplay()]);
 
   return (
-    <div className="bg-[#d57973]">
+    <div className="bg-sage">
       <Carousel
         className="h-full"
         opts={{
