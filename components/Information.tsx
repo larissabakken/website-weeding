@@ -6,17 +6,17 @@ import Detail from "./Detail";
 
 export default function Information() {
   return (
-    <section className="py-10 bg-[#EAC0AC]">
+    <section className="py-10 bg-berry">
       <div className="container mx-auto px-4 pt-20">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-6xl font-bold font-handwriting text-center mb-12 text-[#d57973]"
+          className="text-6xl font-bold font-handwriting text-center mb-12 text-white"
         >
           Bryllups detaljer
         </motion.h2>
-        <div className="grid md:grid-cols-4 gap-8 text-[#f7ece8] font-semibold">
+        <div className="grid md:grid-cols-4 gap-8 text-white font-semibold">
           <Detail
             icon={<Clock className="w-12 h-12 mx-auto mb-4" />}
             info={"20 september 2025"}

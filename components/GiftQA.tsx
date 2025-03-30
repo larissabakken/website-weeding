@@ -6,7 +6,7 @@ import { Gift } from "lucide-react";
 
 export function GiftQA() {
   return (
-    <section className="bg-[#E99873] py-20 ">
+    <section className="bg-berry py-20 ">
       <motion.div
         initial={{ opacity: 0, x: -20 }}
         whileInView={{ opacity: 1, x: 0 }}

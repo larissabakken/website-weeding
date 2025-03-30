@@ -19,7 +19,7 @@ export default function MenuNav() {
 
   return (
     <>
-      <div className="sticky top-0 left-0 w-full items-center bg-[#d57973] bg-opacity-50 z-max">
+      <div className="sticky top-0 left-0 w-full items-center bg-berry z-max">
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-x-20 justify-center text-white font-bold">
           <Link href="/">Hjem</Link>
