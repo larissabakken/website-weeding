@@ -11,6 +11,11 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { CreateGuestFormModal } from "@/components/CreateGuestFormModal";
+import { Button } from "@/components/ui/button";
+import { Trash2 } from "lucide-react";
+import { useState } from "react";
+import DeleteGroupModal from "@/components/DeleteGroupModal";
+import GuestCard from "@/components/GuestCard";
 
 interface Guest {
   id: string;
@@ -37,6 +42,8 @@ export default function Admin() {
     isLoading,
     mutate,
   } = useFetch<Group[]>("/groups");
+  const [deleteModalOpen, setDeleteModalOpen] = useState(false);
+  const [selectedGroupId, setSelectedGroupId] = useState<string | null>(null);
 
   if (error) {
     toast.error("Error loading groups");
@@ -72,46 +79,30 @@ export default function Admin() {
                   </AccordionTrigger>
                   <AccordionContent>
                     <div className="space-y-4">
-                      <div className="flex justify-end mb-4">
+                      <div className="flex justify-end gap-2 mb-4">
                         <CreateGuestFormModal
                           groupId={group.id}
                           onSuccess={() => mutate()}
                         />
+                        <Button
+                          variant="destructive"
+                          onClick={() => {
+                            setSelectedGroupId(group.id);
+                            setDeleteModalOpen(true);
+                          }}
+                        >
+                          <Trash2 className="size-10" />
+                        </Button>
                       </div>
                       {group.guests.length === 0 ? (
                         <p className="text-gray-500">No guests in this group</p>
                       ) : (
                         group.guests.map((guest) => (
-                          <div
+                          <GuestCard
                             key={guest.id}
-                            className="border rounded-lg p-4 space-y-2"
-                          >
-                            <div className="flex justify-between items-center">
-                              <h4 className="font-medium">{guest.name}</h4>
-                              <span
-                                className={`px-2 py-1 rounded text-sm ${
-                                  guest.rsvp
-                                    ? "bg-green-100 text-green-800"
-                                    : "bg-red-100 text-red-800"
-                                }`}
-                              >
-                                {guest.rsvp ? "Confirmed" : "Pending"}
-                              </span>
-                            </div>
-                            <p className="text-sm text-gray-600">
-                              Phone: {guest.phone}
-                            </p>
-                            {guest.foodRestriction && (
-                              <p className="text-sm text-gray-600">
-                                Food Restriction: {guest.foodRestriction}
-                              </p>
-                            )}
-                            {guest.observations && (
-                              <p className="text-sm text-gray-600">
-                                Observations: {guest.observations}
-                              </p>
-                            )}
-                          </div>
+                            guest={guest}
+                            onSuccess={() => mutate()}
+                          />
                         ))
                       )}
                     </div>
@@ -122,6 +113,18 @@ export default function Admin() {
           )}
         </CardContent>
       </Card>
+
+      {selectedGroupId && (
+        <DeleteGroupModal
+          groupId={selectedGroupId}
+          isOpen={deleteModalOpen}
+          onClose={() => {
+            setDeleteModalOpen(false);
+            setSelectedGroupId(null);
+          }}
+          onSuccess={() => mutate()}
+        />
+      )}
     </div>
   );
 }
