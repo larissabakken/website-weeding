@@ -24,11 +24,10 @@ import {
 } from "@/components/ui/dialog";
 import { useFetch } from "@/hooks/use-fetch";
 import { toast } from "sonner";
-import { Textarea } from "./ui/textarea";
 
 const formSchema = z.object({
   name: z.string().min(2, {
-    message: "Name must be at least 2 characters.",
+    message: "Name must be at least 3 characters.",
   }),
   phone: z.string().min(8, {
     message: "Phone must be at least 8 characters.",
@@ -55,8 +54,6 @@ export function CreateGuestFormModal({
     defaultValues: {
       name: "",
       phone: "",
-      foodRestriction: "",
-      observations: "",
     },
   });
 
@@ -111,32 +108,6 @@ export function CreateGuestFormModal({
                   <FormLabel>Phone</FormLabel>
                   <FormControl>
                     <Input placeholder="Phone number" {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="foodRestriction"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Food Restriction</FormLabel>
-                  <FormControl>
-                    <Input placeholder="Food restrictions" {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="observations"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Observations</FormLabel>
-                  <FormControl>
-                    <Textarea placeholder="Additional information" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
