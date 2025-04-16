@@ -10,12 +10,13 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { CreateGuestFormModal } from "@/components/CreateGuestFormModal";
+import { GuestFormModal } from "@/components/GuestFormModal";
 import { Button } from "@/components/ui/button";
-import { Trash2 } from "lucide-react";
+import { Trash2, Pencil } from "lucide-react";
 import { useState } from "react";
 import DeleteGroupModal from "@/components/DeleteGroupModal";
 import GuestCard from "@/components/GuestCard";
+import { GroupEditModal } from "@/components/GroupEditModal";
 
 interface Guest {
   id: string;
@@ -75,12 +76,23 @@ export default function Admin() {
               {groups?.map((group) => (
                 <AccordionItem key={group.id} value={group.id}>
                   <AccordionTrigger className="text-lg font-medium">
-                    {group.name}
+                    <div className="flex items-center gap-2">
+                      {group.name}
+                      <GroupEditModal
+                        group={group}
+                        onSuccess={() => mutate()}
+                        trigger={
+                          <Button variant="ghost" className="h-6 w-6">
+                            <Pencil className="h-4 w-4" />
+                          </Button>
+                        }
+                      />
+                    </div>
                   </AccordionTrigger>
                   <AccordionContent>
                     <div className="space-y-4">
                       <div className="flex justify-end gap-2 mb-4">
-                        <CreateGuestFormModal
+                        <GuestFormModal
                           groupId={group.id}
                           onSuccess={() => mutate()}
                         />

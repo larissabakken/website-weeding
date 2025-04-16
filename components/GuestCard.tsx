@@ -15,6 +15,7 @@ import {
 } from "@/components/ui/alert-dialog";
 import { useFetch } from "@/hooks/use-fetch";
 import { toast } from "sonner";
+import { GuestEditFormModal } from "./GuestEditFormModal";
 
 interface Guest {
   id: string;
@@ -65,15 +66,22 @@ export default function GuestCard({ guest, onSuccess }: GuestCardProps) {
           >
             {guest.rsvp ? "Confirmed" : "Pending"}
           </span>
-          <Button variant="ghost" size="icon">
-            <Pencil className="h-4 w-4" />
-          </Button>
+          <GuestEditFormModal
+            guest={guest}
+            onSuccess={onSuccess}
+            trigger={
+              <Button variant="outline" size="icon">
+                <Pencil className="h-4 w-4" />
+              </Button>
+            }
+          />
           <Button
-            variant="ghost"
+            className="border-destructive hover:bg-destructive/10"
+            variant="outline"
             size="icon"
             onClick={() => setIsDeleteModalOpen(true)}
           >
-            <Trash2 className="h-4 w-4" />
+            <Trash2 className="h-4 w-4 text-destructive" />
           </Button>
         </div>
       </div>
