@@ -3,12 +3,9 @@
 import { motion } from "framer-motion";
 import { Button } from "./ui/button";
 import { Send } from "lucide-react";
+import { router } from "next/client";
 
 export function RSVP() {
-  const handleRSVP = () => {
-    console.log("RSVP to form later");
-    //window.location.href = "det kommer skjemalink her";
-  };
   return (
     <section className="bg-berry py-20 ">
       <motion.div
@@ -29,9 +26,8 @@ export function RSVP() {
           mulig for alle gjestene.
         </div>
         <Button
-          size="lg"
-          className="mx-auto bg-forest hover:bg-[#E99873] text-white rounded-lg px-16 gap-3"
-          onClick={handleRSVP}
+          className="min-w-[70vw] bg-forest hover:bg-[#E99873] text-white rounded-lg gap-3"
+          onClick={() => router.push("/guest-response/")}
         >
           <Send />
           <p>Trykk her for å svare i skjemaet</p>
