@@ -26,7 +26,7 @@ export function RSVP() {
           mulig for alle gjestene.
         </div>
         <Button
-          className="min-w-[70vw] bg-forest hover:bg-[#E99873] text-white rounded-lg gap-3"
+          className="bg-forest hover:bg-forest/80 text-white rounded-lg gap-3"
           onClick={() => router.push("/guest-response/")}
         >
           <Send />

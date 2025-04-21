@@ -1,8 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Button } from "./ui/button";
-import { Gift } from "lucide-react";
+import { CatalogGift } from "./CatalogGift";
 
 export function GiftQA() {
   return (
@@ -32,10 +31,7 @@ export function GiftQA() {
           gavebordet ikke vil være bemannet, så gaver og kort vil ikke åpnes på
           selve bryllupsdagen.
         </div>
-
-        <div className="text-white">
-          <p>Vipps: XXX-XX-XXX</p>
-        </div>
+        <CatalogGift />
       </motion.div>
     </section>
   );
