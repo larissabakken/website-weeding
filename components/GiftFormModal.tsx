@@ -118,7 +118,6 @@ export function GiftFormModal({ gift, isOpen, onClose }: GiftFormModalProps) {
                 </FormItem>
               )}
             />
-
             <FormField
               control={form.control}
               name="text"
@@ -138,8 +137,15 @@ export function GiftFormModal({ gift, isOpen, onClose }: GiftFormModalProps) {
                 </FormItem>
               )}
             />
-            <div>{/* TODO: Add vipps qrcode here */}</div>
-
+            Scan QR-koden under for å vippse gavebeløpet til oss:
+            <div className="flex justify-center">
+              <Image
+                src="/vipps.jpeg"
+                alt="Vipps QR Code"
+                width={300}
+                height={200}
+              />
+            </div>
             <DialogFooter>
               <Button
                 type="button"
