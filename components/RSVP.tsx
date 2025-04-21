@@ -7,12 +7,12 @@ import { router } from "next/client";
 
 export function RSVP() {
   return (
-    <section className="bg-berry py-20 ">
+    <section id="rsvp" className="bg-berry py-20 scroll-mt-10">
       <motion.div
         initial={{ opacity: 0, x: -20 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8, delay: 0.2 }}
-        className="flex flex-col justify-evenly items-center text-center gap-12"
+        className="flex flex-col justify-evenly items-center text-center gap-12 "
       >
         <div className="text-white font-handwriting text-6xl font-bold">
           RSVP

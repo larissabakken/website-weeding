@@ -44,7 +44,10 @@ const events = [
 
 export default function Timeline() {
   return (
-    <section className="h-[100rem] md:h-full py-20 bg-forest text-[#DAEADB]">
+    <section
+      id="bryllup"
+      className="h-[100rem] md:h-full py-20 bg-forest text-[#DAEADB] scroll-mt-6"
+    >
       <div className="container mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}

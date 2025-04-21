@@ -5,7 +5,10 @@ import { motion } from "framer-motion";
 
 export default function Banner() {
   return (
-    <section className="relative flex flex-col pt-10 h-[30rem] sm:h-[40rem] bg-forest w-full">
+    <section
+      id="hjem"
+      className="relative flex flex-col pt-10 h-[30rem] sm:h-[40rem] bg-forest w-full scroll-mt-24"
+    >
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
