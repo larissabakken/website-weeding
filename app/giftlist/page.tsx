@@ -19,6 +19,7 @@ import { Button } from "@/components/ui/button";
 import GiftEditFormModal from "@/components/GiftEditFormModal";
 import AddGiftForm from "@/components/AddGiftForm";
 import DeleteGiftModal from "@/components/DeleteGiftModal";
+import AdminNav from "@/components/AdminNav";
 
 interface Gift {
   id: string;
@@ -37,6 +38,7 @@ export default function WishList() {
 
   return (
     <div className="container mx-auto px-4 py-8 gap-4 flex flex-col">
+      <AdminNav />
       <h1 className="text-3xl font-bold mb-8">Admin Dashboard</h1>
       <AddGiftForm />
       <Card className="bg-white shadow-md rounded-lg p-6">
