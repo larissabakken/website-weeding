@@ -93,10 +93,10 @@ function GuestForm({ guest, onUpdate }: GuestFormProps) {
               name="name"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Name</FormLabel>
+                  <FormLabel>Navn</FormLabel>
                   <FormControl>
                     <Input
-                      placeholder="John Doe"
+                      placeholder="Ola Nordmann"
                       {...field}
                       readOnly
                       className="bg-muted"
@@ -111,9 +111,9 @@ function GuestForm({ guest, onUpdate }: GuestFormProps) {
               name="phone"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Phone</FormLabel>
+                  <FormLabel>Mobilnummer</FormLabel>
                   <FormControl>
-                    <Input placeholder="Phone number" {...field} />
+                    <Input placeholder="Mobilnummer" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -126,9 +126,9 @@ function GuestForm({ guest, onUpdate }: GuestFormProps) {
             render={({ field }) => (
               <FormItem className="flex flex-row items-center justify-between rounded-lg border p-4">
                 <div className="space-y-0.5">
-                  <FormLabel className="text-base">Confirm presence</FormLabel>
+                  <FormLabel className="text-base">Bekreft</FormLabel>
                   <div className="text-sm text-muted-foreground">
-                    Mark if the guest confirmed presence
+                    Marker om gjesten skal komme i bryllupet
                   </div>
                 </div>
                 <FormControl>
@@ -138,7 +138,7 @@ function GuestForm({ guest, onUpdate }: GuestFormProps) {
                       onCheckedChange={field.onChange}
                     />
                     <span className="text-sm text-muted-foreground">
-                      {field.value ? "Yes" : "No"}
+                      {field.value ? "Ja" : "Nei"}
                     </span>
                   </div>
                 </FormControl>
@@ -150,9 +150,9 @@ function GuestForm({ guest, onUpdate }: GuestFormProps) {
             name="foodRestriction"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Food restrictions</FormLabel>
+                <FormLabel>Matrestriksjoner</FormLabel>
                 <FormControl>
-                  <Input placeholder="Any food restriction?" {...field} />
+                  <Input placeholder="Har du matrestriksjoner?" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -163,16 +163,16 @@ function GuestForm({ guest, onUpdate }: GuestFormProps) {
             name="observations"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Observations</FormLabel>
+                <FormLabel>Observasjoner</FormLabel>
                 <FormControl>
-                  <Input placeholder="Any observation?" {...field} />
+                  <Input placeholder="Noe du vil ta opp?" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
             )}
           />
           <p className="text-xs text-muted-foreground text-center mt-2">
-            If your name is incorrect, please contact us to modify it
+            Om navnet ditt er feil, vennligst ta kontakt med oss for å endre det
           </p>
         </form>
       </Form>
@@ -231,13 +231,13 @@ export default function GuestResponseForm() {
 
       setGroup(updatedGroup);
       setHasUnsavedChanges(false);
-      toast("Responses saved successfully", {
+      toast("Svaret har blitt lagret", {
         type: "success",
       });
       router.push("/");
     } catch (error) {
       console.error("Error saving responses:", error);
-      toast("Error saving responses", {
+      toast("Error under lagring av svar", {
         type: "error",
       });
     } finally {
@@ -297,16 +297,16 @@ export default function GuestResponseForm() {
       <AlertDialog open={showExitDialog} onOpenChange={setShowExitDialog}>
         <AlertDialogContent className="max-w-[90vw]">
           <AlertDialogHeader>
-            <AlertDialogTitle>Unsaved Changes</AlertDialogTitle>
+            <AlertDialogTitle>Ulagrede endringer</AlertDialogTitle>
             <AlertDialogDescription>
-              You have unsaved changes. Are you sure you want to leave without
-              saving?
+              Du har ulagrede endringer. Er du sikker på at du vil forlate uten
+              å lagre?
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
             <AlertDialogCancel>Stay</AlertDialogCancel>
             <AlertDialogAction onClick={() => router.push("/")}>
-              Leave without saving
+              Forlat uten å lagre
             </AlertDialogAction>
           </AlertDialogFooter>
         </AlertDialogContent>

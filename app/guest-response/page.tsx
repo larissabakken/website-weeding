@@ -70,7 +70,8 @@ export default function GuestResponse() {
         <CardHeader>
           <CardTitle>RSVP</CardTitle>
           <CardDescription>
-            Use the code that was sent to you by SMS to access the RSVP form
+            Bruk koden som ble sendt til deg på SMS for å få tilgang til
+            RSVP-skjemaet
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -81,7 +82,7 @@ export default function GuestResponse() {
                 name="code"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Verification Code</FormLabel>
+                    <FormLabel>Verifikasjons-kode</FormLabel>
                     <FormControl>
                       <Input
                         type="text"
