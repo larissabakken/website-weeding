@@ -23,8 +23,9 @@ import {
 } from "@/components/ui/form";
 import { useState } from "react";
 import { useFetch } from "@/hooks/use-fetch";
-import { toast, useToast } from "@/components/ui/use-toast";
+import { useToast } from "@/hooks/use-toast";
 import Image from "next/image";
+
 const formSchema = z.object({
   name: z.string().min(2, "Navnet må ha minst 2 tegn"),
   text: z.string().optional(),
@@ -52,7 +53,7 @@ interface GiftFormModalProps {
 export function GiftFormModal({ gift, isOpen, onClose }: GiftFormModalProps) {
   const [isLoading, setIsLoading] = useState(false);
   const { req } = useFetch();
-
+  const toast = useToast();
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -72,17 +73,14 @@ export function GiftFormModal({ gift, isOpen, onClose }: GiftFormModalProps) {
         giftId: gift.id,
       });
 
-      toast({
-        title: "Success",
-        description: "Message sent successfully!",
+      toast("Message sent successfully!", {
+        type: "success",
       });
       onClose();
       form.reset();
     } catch (error) {
-      toast({
-        title: "Error",
-        description: "Error sending message",
-        variant: "destructive",
+      toast("Error sending message", {
+        type: "error",
       });
       console.error(error);
     } finally {
