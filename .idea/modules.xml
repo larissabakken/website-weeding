@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Wedding Website Fork.iml" filepath="$PROJECT_DIR$/.idea/Wedding Website Fork.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../wedding-api/.idea/wedding-api.iml" filepath="$PROJECT_DIR$/../wedding-api/.idea/wedding-api.iml" />
     </modules>
   </component>
 </project>

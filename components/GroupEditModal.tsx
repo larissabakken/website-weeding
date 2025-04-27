@@ -23,8 +23,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { useFetch } from "@/hooks/use-fetch";
-import { toast } from "sonner";
-import { Pencil } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -46,9 +45,10 @@ export function GroupEditModal({
   onSuccess,
   trigger,
 }: GroupEditModalProps) {
-  const [open, setOpen] = useState(false);
+  const toast = useToast();
   const { req } = useFetch();
   const [loading, setLoading] = useState(false);
+  const [open, setOpen] = useState(false);
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -61,13 +61,17 @@ export function GroupEditModal({
     setLoading(true);
     try {
       await req(`/groups/${group.id}`, "PATCH", values);
-      toast.success("Group updated successfully");
+      toast("Group updated successfully", {
+        type: "success",
+      });
       form.reset();
       setOpen(false);
       onSuccess?.();
     } catch (error) {
       console.error("Error updating group:", error);
-      toast.error("Error updating group");
+      toast("Error updating group", {
+        type: "error",
+      });
     } finally {
       setLoading(false);
     }

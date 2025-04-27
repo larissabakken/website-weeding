@@ -1,11 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Button } from "./ui/button";
+import { Button } from "@/components/ui/button";
 import { Send } from "lucide-react";
-import { router } from "next/client";
+import { useRouter } from "next/navigation";
 
 export function RSVP() {
+  const router = useRouter();
+
   return (
     <section id="rsvp" className="bg-berry py-20 scroll-mt-10">
       <motion.div

@@ -18,7 +18,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardTitle, CardHeader } from "./ui/card";
 import { useFetch } from "@/hooks/use-fetch";
-import { toast } from "sonner";
+import { useToast } from "@/hooks/use-toast";
 
 const formSchema = z.object({
   name: z
@@ -33,6 +33,7 @@ const formSchema = z.object({
 export default function AddGiftForm() {
   const { req, mutate } = useFetch("/gifts");
   const [loading, setLoading] = useState(false);
+  const toast = useToast();
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -48,11 +49,15 @@ export default function AddGiftForm() {
       await req("/gifts", "POST", values);
       console.log(values);
       form.reset();
-      toast.success("Gift added successfully");
+      toast("Gift added successfully", {
+        type: "success",
+      });
       await mutate();
     } catch (error) {
       console.error("Error creating gift:", error);
-      toast.error("Error creating gift");
+      toast("Error creating gift", {
+        type: "error",
+      });
     } finally {
       setLoading(false);
     }

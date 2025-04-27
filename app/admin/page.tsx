@@ -3,7 +3,6 @@ import CreateGroupForm from "@/components/CreateGroupForm";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useFetch } from "@/hooks/use-fetch";
-import { toast } from "sonner";
 import {
   Accordion,
   AccordionContent,
@@ -12,12 +11,13 @@ import {
 } from "@/components/ui/accordion";
 import { GuestFormModal } from "@/components/GuestFormModal";
 import { Button } from "@/components/ui/button";
-import { Trash2, Pencil } from "lucide-react";
+import { Trash2, Pencil, Copy } from "lucide-react";
 import { useState } from "react";
 import DeleteGroupModal from "@/components/DeleteGroupModal";
 import GuestCard from "@/components/GuestCard";
 import { GroupEditModal } from "@/components/GroupEditModal";
 import AdminNav from "@/components/AdminNav";
+import { useToast } from "@/hooks/use-toast";
 
 interface Guest {
   id: string;
@@ -46,9 +46,12 @@ export default function Admin() {
   } = useFetch<Group[]>("/groups");
   const [deleteModalOpen, setDeleteModalOpen] = useState(false);
   const [selectedGroupId, setSelectedGroupId] = useState<string | null>(null);
+  const toast = useToast();
 
   if (error) {
-    toast.error("Error loading groups");
+    toast("Error loading groups", {
+      type: "error",
+    });
   }
 
   return (
@@ -57,7 +60,7 @@ export default function Admin() {
       <h1 className="text-3xl font-bold mb-8">Admin Dashboard</h1>
       <CreateGroupForm />
       <Card className="bg-white shadow-md rounded-lg p-6">
-        <CardHeader>
+        <CardHeader className="flex flex-row items-center justify-between">
           <CardTitle>List of Groups</CardTitle>
         </CardHeader>
         <CardContent>
@@ -94,6 +97,19 @@ export default function Admin() {
                   <AccordionContent>
                     <div className="space-y-4">
                       <div className="flex justify-end gap-2 mb-4">
+                        <Button
+                          variant="outline"
+                          onClick={() => {
+                            const code = group.id.slice(-5);
+                            navigator.clipboard.writeText(code);
+                            toast("Code copied!", {
+                              type: "success",
+                            });
+                          }}
+                        >
+                          <Copy className="size-4 mr-2" />
+                          Copy group access code: {group.id.slice(-5)}
+                        </Button>
                         <GuestFormModal
                           groupId={group.id}
                           onSuccess={() => mutate()}

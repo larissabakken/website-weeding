@@ -23,7 +23,7 @@ import {
 } from "@/components/ui/form";
 import { useState } from "react";
 import { useFetch } from "@/hooks/use-fetch";
-import { toast } from "sonner";
+import { toast, useToast } from "@/components/ui/use-toast";
 import Image from "next/image";
 const formSchema = z.object({
   name: z.string().min(2, "Navnet må ha minst 2 tegn"),
@@ -72,11 +72,18 @@ export function GiftFormModal({ gift, isOpen, onClose }: GiftFormModalProps) {
         giftId: gift.id,
       });
 
-      toast.success("Melding sendt vellykket!");
+      toast({
+        title: "Success",
+        description: "Message sent successfully!",
+      });
       onClose();
       form.reset();
     } catch (error) {
-      toast.error("Feil ved sending av melding");
+      toast({
+        title: "Error",
+        description: "Error sending message",
+        variant: "destructive",
+      });
       console.error(error);
     } finally {
       setIsLoading(false);
