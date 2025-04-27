@@ -14,13 +14,13 @@ export default function Information() {
           transition={{ duration: 0.8 }}
           className="text-6xl font-bold font-handwriting text-center mb-12 text-white"
         >
-          Bryllups detaljer
+          Bryllupsdetaljer
         </motion.h2>
         <div className="grid md:grid-cols-4 gap-8 text-white font-semibold">
           <Detail
             icon={<Clock className="w-12 h-12 mx-auto mb-4" />}
             info={"20 september 2025"}
-            description={"12:00"}
+            description={"kl 12:00"}
           />
           <Detail
             icon={<MapPin className="w-12 h-12 mx-auto mb-4" />}
