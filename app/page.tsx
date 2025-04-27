@@ -7,6 +7,7 @@ import { GiftQA } from "@/components/GiftQA";
 import PhotosBanner from "@/components/PhotosBanner";
 import Timeline from "@/components/Timeline";
 import Footer from "@/components/Footer";
+import { Menu } from "@/components/Menu";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
       <Timeline />
       <GiftQA />
       <QandA />
+      <Menu />
       <Footer />
     </main>
   );

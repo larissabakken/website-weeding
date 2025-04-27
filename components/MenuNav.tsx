@@ -28,7 +28,7 @@ export default function MenuNav() {
     <>
       <div className="sticky top-0 left-0 w-full items-center bg-berry z-max">
         {/* Desktop Menu */}
-        <div className="hidden md:flex items-center gap-x-8 justify-center text-white font-bold">
+        <div className="hidden md:flex items-center gap-x-4 justify-center text-white font-bold">
           <Button variant="ghost" onClick={() => handleNavigation("hjem")}>
             Hjem
           </Button>
@@ -45,6 +45,10 @@ export default function MenuNav() {
 
           <Button variant="ghost" onClick={() => handleNavigation("questions")}>
             Spørsmål og svar
+          </Button>
+
+          <Button variant="ghost" onClick={() => handleNavigation("menu")}>
+            Meny
           </Button>
         </div>
 
