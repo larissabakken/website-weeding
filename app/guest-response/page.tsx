@@ -19,12 +19,12 @@ import { Input } from "@/components/ui/input";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-import { toast } from "sonner";
 import { useFetch } from "@/hooks/use-fetch";
 import { Button } from "@/components/ui/button";
 import { LoadingSpinner } from "@/components/ui/loading-spinner";
 import { useRouter } from "next/navigation";
 import { setCookie } from "cookies-next";
+import { useToast } from "@/hooks/use-toast";
 
 const formSchema = z.object({
   code: z.string().min(3, {
@@ -35,7 +35,7 @@ const formSchema = z.object({
 export default function GuestResponse() {
   const { req, isLoading } = useFetch();
   const router = useRouter();
-
+  const toast = useToast();
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -51,12 +51,16 @@ export default function GuestResponse() {
           maxAge: 60 * 60, // 1 hour
           path: "/",
         });
-        toast.success("Verification successful");
+        toast("Verification successful", {
+          type: "success",
+        });
         router.push("/guest-response/form");
       }
     } catch (error) {
       console.error("Error verifying guest:", error);
-      toast.error("Invalid code");
+      toast("Invalid code", {
+        type: "error",
+      });
     }
   }
 

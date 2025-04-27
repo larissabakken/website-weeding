@@ -5,9 +5,9 @@ import { Card, CardFooter, CardHeader } from "@/components/ui/card";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
-import { toast } from "sonner";
-import { Skeleton } from "./ui/skeleton";
-import { GiftFormModal } from "./GiftFormModal";
+import { Skeleton } from "@/components/ui/skeleton";
+import { GiftFormModal } from "@/components/GiftFormModal";
+import { useToast } from "@/hooks/use-toast";
 
 interface Gift {
   id: string;
@@ -23,6 +23,7 @@ interface Gift {
 }
 
 export function CatalogGift() {
+  const toast = useToast();
   const { data, isLoading, error } = useFetch<Gift[]>("/gifts");
   const [selectedGift, setSelectedGift] = useState<Gift | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -36,7 +37,9 @@ export function CatalogGift() {
   }
 
   if (error) {
-    toast.error("Error loading gifts");
+    toast("Error loading gifts", {
+      type: "error",
+    });
   }
 
   const handleGift = (gift: Gift) => {

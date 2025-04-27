@@ -23,8 +23,8 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { useFetch } from "@/hooks/use-fetch";
-import { toast } from "sonner";
 import { Switch } from "@/components/ui/switch";
+import { useToast } from "@/hooks/use-toast";
 
 const formSchema = z.object({
   name: z
@@ -58,6 +58,7 @@ export default function GiftEditFormModal({
   onSuccess,
   trigger,
 }: GiftEditFormModalProps) {
+  const toast = useToast();
   const [open, setOpen] = useState(false);
   const { req } = useFetch();
   const [loading, setLoading] = useState(false);
@@ -80,13 +81,17 @@ export default function GiftEditFormModal({
       await req(`/gifts/${gift.id}`, "PATCH", {
         ...values,
       });
-      toast.success("Gift updated successfully");
+      toast("Gift updated successfully", {
+        type: "success",
+      });
       form.reset();
       setOpen(false);
       onSuccess?.();
     } catch (error) {
       console.error("Error updating gift:", error);
-      toast.error("Error updating gift");
+      toast("Error updating gift", {
+        type: "error",
+      });
     } finally {
       setLoading(false);
     }

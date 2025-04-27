@@ -14,8 +14,8 @@ import {
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog";
 import { useFetch } from "@/hooks/use-fetch";
-import { toast } from "sonner";
-import { GuestEditFormModal } from "./GuestEditFormModal";
+import { useToast } from "@/hooks/use-toast";
+import { GuestEditFormModal } from "@/components/GuestEditFormModal";
 
 interface Guest {
   id: string;
@@ -34,18 +34,23 @@ interface GuestCardProps {
 }
 
 export default function GuestCard({ guest, onSuccess }: GuestCardProps) {
+  const { req } = useFetch();
+  const toast = useToast();
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
-  const { req } = useFetch("/guests");
 
   const handleDelete = async () => {
     try {
       await req(`/guests/${guest.id}`, "DELETE");
-      toast.success("Guest deleted successfully");
+      toast("Guest deleted successfully", {
+        type: "success",
+      });
       onSuccess();
       setIsDeleteModalOpen(false);
     } catch (error) {
       console.error("Error deleting guest:", error);
-      toast.error("Error deleting guest");
+      toast("Error deleting guest", {
+        type: "error",
+      });
     }
   };
 

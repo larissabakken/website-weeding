@@ -16,9 +16,9 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { Card, CardContent, CardTitle, CardHeader } from "./ui/card";
+import { Card, CardContent, CardTitle, CardHeader } from "@/components/ui/card";
 import { useFetch } from "@/hooks/use-fetch";
-import { toast } from "sonner";
+import { useToast } from "@/hooks/use-toast";
 
 const formSchema = z.object({
   name: z.string().min(3, {
@@ -27,6 +27,7 @@ const formSchema = z.object({
 });
 
 export default function CreateGroupForm() {
+  const toast = useToast();
   const { req, mutate } = useFetch("/groups");
   const [loading, setLoading] = useState(false);
 
@@ -42,11 +43,15 @@ export default function CreateGroupForm() {
     try {
       await req("/groups", "POST", values);
       form.reset();
-      toast.success("Group created successfully");
+      toast("Group created successfully", {
+        type: "success",
+      });
       await mutate();
     } catch (error) {
       console.error("Error creating group:", error);
-      toast.error("Error creating group");
+      toast("Error creating group", {
+        type: "error",
+      });
     } finally {
       setLoading(false);
     }

@@ -11,7 +11,7 @@ import {
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog";
 import { useFetch } from "@/hooks/use-fetch";
-import { toast } from "sonner";
+import { useToast } from "@/hooks/use-toast";
 
 interface DeleteGroupModalProps {
   groupId: string;
@@ -27,16 +27,21 @@ export default function DeleteGiftModal({
   onSuccess,
 }: DeleteGroupModalProps) {
   const { req } = useFetch("/gifts");
+  const toast = useToast();
 
   const handleDelete = async () => {
     try {
       await req(`/gifts/${groupId}`, "DELETE");
-      toast.success("Gift deleted successfully");
+      toast("Gift deleted successfully", {
+        type: "success",
+      });
       onSuccess();
       onClose();
     } catch (error) {
       console.error("Error deleting gift:", error);
-      toast.error("Error deleting gift");
+      toast("Error deleting gift", {
+        type: "error",
+      });
     }
   };
 

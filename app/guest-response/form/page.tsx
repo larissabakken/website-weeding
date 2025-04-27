@@ -6,7 +6,6 @@ import { z } from "zod";
 import { useEffect, useState } from "react";
 import { getCookie } from "cookies-next";
 import { useRouter } from "next/navigation";
-import { toast } from "sonner";
 import { useFetch } from "@/hooks/use-fetch";
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
@@ -30,6 +29,7 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog";
+import { useToast } from "@/hooks/use-toast";
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -183,6 +183,7 @@ function GuestForm({ guest, onUpdate }: GuestFormProps) {
 export default function GuestResponseForm() {
   const router = useRouter();
   const { req } = useFetch();
+  const toast = useToast();
   const [group, setGroup] = useState<Group | null>(null);
   const [loading, setLoading] = useState(false);
   const [guestForms, setGuestForms] = useState<
@@ -230,11 +231,15 @@ export default function GuestResponseForm() {
 
       setGroup(updatedGroup);
       setHasUnsavedChanges(false);
-      toast.success("Responses saved successfully");
+      toast("Responses saved successfully", {
+        type: "success",
+      });
       router.push("/");
     } catch (error) {
       console.error("Error saving responses:", error);
-      toast.error("Error saving responses");
+      toast("Error saving responses", {
+        type: "error",
+      });
     } finally {
       setLoading(false);
     }

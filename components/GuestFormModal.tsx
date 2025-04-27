@@ -23,7 +23,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { useFetch } from "@/hooks/use-fetch";
-import { toast } from "sonner";
+import { useToast } from "@/hooks/use-toast";
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -42,6 +42,7 @@ interface GuestFormModalProps {
 }
 
 export function GuestFormModal({ groupId, onSuccess }: GuestFormModalProps) {
+  const toast = useToast();
   const [open, setOpen] = useState(false);
   const { req } = useFetch();
   const [loading, setLoading] = useState(false);
@@ -62,12 +63,16 @@ export function GuestFormModal({ groupId, onSuccess }: GuestFormModalProps) {
         groupId,
       });
       form.reset();
-      toast.success("Guest added successfully");
+      toast("Guest added successfully", {
+        type: "success",
+      });
       setOpen(false);
       onSuccess?.();
     } catch (error) {
       console.error("Error adding guest:", error);
-      toast.error("Error adding guest");
+      toast("Error adding guest", {
+        type: "error",
+      });
     } finally {
       setLoading(false);
     }

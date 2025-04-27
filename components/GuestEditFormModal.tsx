@@ -23,8 +23,8 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { useFetch } from "@/hooks/use-fetch";
-import { toast } from "sonner";
 import { Switch } from "@/components/ui/switch";
+import { useToast } from "@/hooks/use-toast";
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -59,6 +59,7 @@ export function GuestEditFormModal({
   onSuccess,
   trigger,
 }: GuestEditFormModalProps) {
+  const toast = useToast();
   const [open, setOpen] = useState(false);
   const { req } = useFetch();
   const [loading, setLoading] = useState(false);
@@ -80,13 +81,17 @@ export function GuestEditFormModal({
       await req(`/guests/${guest.id}`, "PATCH", {
         ...values,
       });
-      toast.success("Guest updated successfully");
+      toast("Guest updated successfully", {
+        type: "success",
+      });
       form.reset();
       setOpen(false);
       onSuccess?.();
     } catch (error) {
       console.error("Error updating guest:", error);
-      toast.error("Error updating guest");
+      toast("Error updating guest", {
+        type: "error",
+      });
     } finally {
       setLoading(false);
     }
