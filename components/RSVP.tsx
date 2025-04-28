@@ -20,12 +20,16 @@ export function RSVP() {
           RSVP
         </div>
         <div className="container mx-auto text-white font-medium px-16">
-          Skriv inn telefonnummeret ditt for å få tilgang til invitasjonen din
-          og gi oss din RSVP. Invitasjonen er knyttet til deg og din familie, og
-          du kan oppgi hvor mange som kommer sammen med deg. Klikk på lenken
-          nedenfor for å bli sendt videre til skjemaet. Det er veldig viktig for
-          oss at du svarer så snart som mulig, slik at vi kan forberede oss best
-          mulig for alle gjestene.
+          Kommer du?
+          <br />
+          Klikk på knappen under og skriv inn koden fra tekstmeldingen du fikk
+          for å svare på vegne av husstanden din.
+          <br />
+          Du kan logge inn igjen senere med samme kode for å sjekke eller endre
+          svaret ditt.
+          <br />
+          <br />
+          Svarfrist 31.05.25. 📩
         </div>
         <Button
           className="bg-forest hover:bg-forest/80 text-white rounded-lg gap-3"

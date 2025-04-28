@@ -17,19 +17,29 @@ export function GiftQA() {
         </div>
 
         <div className="container mx-auto text-white font-bold px-16">
-          Vi har ikke en gaveønskeliste, men hvis du ønsker å gi oss noe, blir
-          vi superglade for bidrag til bryllupsreisen vår! ✈️💕
+          Du trenger ikke å gi oss noe gave (i denne økonomien💸). Det er supert
+          om du vil bidra til kakebordet eller andre forberedelser - se mer om
+          det lengre ned.
           <br />
           <br />
-          Din gave vil bli brukt med omhu – kanskje til en is i Disneyland, en
-          donut i solen, en matchende turistgenser fra gavebutikken, eller en
-          romantisk middag vi ikke trenger å lage selv. Takk for at du vil være
-          med og skape minner sammen med oss! 🍦🍩🧥🍝
+          Meeeeeeen om du likevel har lyst til gi en gave ønsker vi oss i grunn
+          to ting. 😇 Bidrag til bryllupsreise til Disneyland Paris 🌈🐭🏰 og en
+          grom kjøkkenmaskin av merket Ankarsrum 🥐.
           <br />
           <br />
-          Fysiske gaver og kort kan henvendes til gavebordet. Dog merk at
-          gavebordet ikke vil være bemannet, så gaver og kort vil ikke åpnes på
-          selve bryllupsdagen.
+          Om du velger å sende over et øremerket beløp fra listen under vil vi
+          gjøre vårt ytterste for å levere bildebevis fra reisen vår. Ånei,
+          håper ikke alle gir én iskrem hver slik at vi er nødt til å spise 70
+          iskremer og sende bilde av hver eneste en...😋 - Edith
+          <br />
+          <br />
+          Vi kommer til å ha et “ubemannet” gavebord og vil åpne eventuelle
+          fysiske og digitale gaver dagen etter feiringen.
+          <br />
+          <br />
+          Vippskoden tar deg til Christian og det er riktig, men det går til en
+          felleskonto som Edith disponerer, som vi ikke sjekker før bryllupet.
+          Vi lover. 🤭
         </div>
         <CatalogGift />
       </motion.div>
