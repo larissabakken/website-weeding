@@ -28,9 +28,10 @@ export function GiftQA() {
           <br />
           <br />
           Om du velger å sende over et øremerket beløp fra listen under vil vi
-          gjøre vårt ytterste for å levere bildebevis fra reisen vår. Ånei,
-          håper ikke alle gir én iskrem hver slik at vi er nødt til å spise 70
-          iskremer og sende bilde av hver eneste en...😋 - Edith
+          gjøre vårt ytterste for å levere bildebevis fra reisen vår.
+          <br />
+          Ånei, håper ikke alle gir én iskrem hver slik at vi er nødt til å
+          spise 70 iskremer og sende bilde av hver eneste en...😋 - Edith
           <br />
           <br />
           Vi kommer til å ha et “ubemannet” gavebord og vil åpne eventuelle
