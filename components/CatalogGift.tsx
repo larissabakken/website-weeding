@@ -61,11 +61,6 @@ export function CatalogGift() {
               />
             </div>
             <CardHeader>
-              <div className="flex justify-between text-sm text-muted-foreground w-full">
-                <span>Available: {gift.quantity - gift.quantityBought}</span>
-                <span>Total: {gift.quantity}</span>
-              </div>
-
               <h3 className="font-semibold">{gift.name}</h3>
               {gift.description && (
                 <p className="text-sm text-muted-foreground">
